@@ -35,6 +35,15 @@ spec:
         - name: grpc
           containerPort: 9999
           protocol: TCP
+        securityContext:
+          runAsUser: 1001
+          runAsNonRoot: true
+          privileged: false
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop: ["ALL"]
+          seccompProfile:
+            type: "RuntimeDefault"
         command:
         - ./podinfo
         - --port=9898
