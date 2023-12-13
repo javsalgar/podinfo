@@ -36,7 +36,6 @@ spec:
           containerPort: 9999
           protocol: TCP
         securityContext:
-          runAsUser: 1001
           runAsNonRoot: true
           privileged: false
           allowPrivilegeEscalation: false
